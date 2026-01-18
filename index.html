@@ -11,15 +11,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background: #f5f7fa;
             font-family: 'Helvetica Neue', Arial, sans-serif;
+            padding: 20px;
         }
         
-        .content {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .main-content {
             text-align: center;
             padding: 2rem;
             max-width: 600px;
+            margin-bottom: 3rem;
         }
         
         h1 {
@@ -31,8 +41,8 @@
         }
         
         .dot {
-            font-size: 2.33rem; /* 3.5rem × 2/3 ≈ 2.33rem */
-            color: #34a853; /* 绿色作为示例，你可以改为其他颜色 */
+            font-size: 2.33rem;
+            color: #34a853;
             vertical-align: middle;
         }
         
@@ -47,13 +57,161 @@
             font-size: 1rem;
             color: #80868b;
         }
+        
+        .links-section {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+        
+        .links-section h2 {
+            text-align: center;
+            color: #1a73e8;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .link-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 2px solid transparent;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            border-color: #1a73e8;
+        }
+        
+        .link-title {
+            font-size: 1.4rem;
+            color: #1a73e8;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .link-url {
+            font-size: 0.95rem;
+            color: #5f6368;
+            word-break: break-all;
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+        
+        .link-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #34a853;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .link-badge.blue {
+            background: #1a73e8;
+        }
+        
+        .link-badge.orange {
+            background: #fa7b17;
+        }
+        
+        .link-badge.purple {
+            background: #9c27b0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .dot {
+                font-size: 1.67rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .main-content {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .dot {
+                font-size: 1.33rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .link-card {
+                padding: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>节<span class="dot">点</span>新闻</h1>
-        <p>热门交易品种动态</p>
-        <div class="url">http://jie.news</div>
+    <div class="container">
+        <div class="main-content">
+            <h1>节<span class="dot">点</span>新闻</h1>
+            <p>热门交易品种动态</p>
+            <div class="url">http://jie.news</div>
+        </div>
+        
+        <div class="links-section">
+            <h2>快速访问链接</h2>
+            <div class="links-grid">
+                <a href="http://pc102.sh18.com:81" target="_blank" class="link-card">
+                    <span class="link-badge blue">2</span>
+                    <div class="link-title">2优化</div>
+                    <div class="link-url">http://pc102.sh18.com:81</div>
+                </a>
+                
+                <a href="http://pc102.sh18.com:85" target="_blank" class="link-card">
+                    <span class="link-badge orange">3</span>
+                    <div class="link-title">3快速</div>
+                    <div class="link-url">http://pc102.sh18.com:85</div>
+                </a>
+                
+                <a href="http://pc102.sh18.com:91" target="_blank" class="link-card">
+                    <span class="link-badge purple">4</span>
+                    <div class="link-title">4概念</div>
+                    <div class="link-url">http://pc102.sh18.com:91</div>
+                </a>
+                
+                <a href="http://pc102.sh18.com:8592" target="_blank" class="link-card">
+                    <span class="link-badge">6</span>
+                    <div class="link-title">6快概念</div>
+                    <div class="link-url">http://pc102.sh18.com:8592</div>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
